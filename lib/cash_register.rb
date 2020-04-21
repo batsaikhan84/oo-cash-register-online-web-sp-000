@@ -34,4 +34,10 @@ class CashRegister
     @items
   end
   
+  def void_last_transaction
+    @total = @total - self.previous_total
+    if @items = []
+      @total = 0.0
+    end
+  end
 end

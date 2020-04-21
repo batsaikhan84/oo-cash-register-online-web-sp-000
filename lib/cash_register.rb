@@ -4,6 +4,7 @@ class CashRegister
     @total = 0.0
     @discount = discount
     @items = []
+    @previous_total = 0
   end
   
   def self.total

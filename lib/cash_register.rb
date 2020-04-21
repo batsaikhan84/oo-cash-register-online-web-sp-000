@@ -11,6 +11,7 @@ class CashRegister
   end
   
   def add_item(title, price, quantity=1)
+    
     @total += price*quantity
     counter = 1
     while counter <= quantity
@@ -33,7 +34,7 @@ class CashRegister
   end
   
   def void_last_transaction
-    @previous_total
+    
     @items.pop()
     if @items = []
       @total = 0.0

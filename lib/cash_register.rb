@@ -1,10 +1,9 @@
 class CashRegister
-  attr_accessor :total, :discount, :items, :previous_total
+  attr_accessor :total, :discount, :items
   def initialize(discount=0)
     @total = 0.0
     @discount = discount
     @items = []
-    @previous_total = 0
   end
   
   def self.total
@@ -12,7 +11,6 @@ class CashRegister
   end
   
   def add_item(title, price, quantity=1)
-    @previous_total = @total
     @total = price*quantity
     counter = 1
     while counter <= quantity
@@ -35,7 +33,7 @@ class CashRegister
   end
   
   def void_last_transaction
-    @total = @previous_total
+    @total
     @items.pop()
     if @items = []
       @total = 0.0

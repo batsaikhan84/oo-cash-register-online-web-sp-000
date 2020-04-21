@@ -38,7 +38,7 @@ class CashRegister
     if @previous_total = 0
       @total = 0
     else
-      @previous_total
+      @total -= @price
     end
   end
 end
